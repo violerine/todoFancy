@@ -16,7 +16,8 @@ const todolist = new Vue({
                 window.location=('login.html')
             }
             console.log(userid)
-            axios.get(`http://localhost:8000/task/${userid}`)
+            // axios.get(`http://localhost:8000/task/${userid}`)
+            axios.get(`http://35.197.144.182/task/${userid}`)
             .then(tasks=>{
                 this.todoList=tasks.data
             })
@@ -26,7 +27,7 @@ const todolist = new Vue({
         },
         newToDo(){
             console.log(localStorage.getItem('userId'))
-            axios.post(`http://localhost:8000/task/new`,{
+            axios.post(`http://35.197.144.182/task/new`,{
                 userid:this.userId,
                 title:this.title,
                 content:this.content
@@ -41,7 +42,7 @@ const todolist = new Vue({
         },
         deleteToDo(todo){
             var userid=localStorage.getItem('userId')
-            axios.delete(`http://localhost:8000/task/delete/${todo}`)
+            axios.delete(`http://35.197.144.182/task/delete/${todo}`)
             .then(deleted=>{
                 window.location.reload()
             })

@@ -7,7 +7,7 @@ var register = new Vue({
     },
     methods:{
         register(){
-            axios.post('http://localhost:8000/register',
+            axios.post('http://35.197.144.182/register',
             {
                 name:this.name, 
                 username:this.username, 

@@ -10,7 +10,7 @@ var login = new Vue({
     },
     methods:{
         login(){
-            axios.post('http://localhost:8000/login',
+            axios.post('http://35.197.144.182/login',
             {
                 username:this.username, 
                 password:this.password
